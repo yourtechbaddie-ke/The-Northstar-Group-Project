@@ -212,7 +212,7 @@ By signing below, each member confirms that they understand and agree to the tea
 |     1           |     _________Marrion Branham_________    |     Project Lead                       |     ____M.B______________    |     ___15th August,2026_______    |
 |     2           |     __________Samuel visinde________    |     Product/Conversation Designer      |     _____S.V_____________    |     _____15th August,2026_____    |
 |     3           |     __________________    |     Technical Developer                |     __________________    |     __________    |
-|     4           |     __________________    |     QA & Testing Lead                  |     __________________    |     __________    |
+|     4           |     ________ABDUROHMAN DAWUD__________    |     QA & Testing Lead                  |     _______A.D___________    |     ____15th August,2026______    |
 |     5           |     __________________    |   Support logic & workflow design      |     __________________    |     __________    |
 
 
