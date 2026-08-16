@@ -100,13 +100,9 @@ There is NO Account page, NO login, and NO admin panel.
 Environment Variables
 | Variable | Description |
 |---|---|
-| FIREBASE_CREDENTIALS_JSON | Firebase service account key as a
-single-line JSON string |
-| FIREBASE_DATABASE_URL | Firebase Realtime Database URL |
 | FIREBASE_INVENTORY_PATH | Root node in Firebase where inventory
 records live (default: inventory) |
 | OPENAI_API_KEY | OpenAI API key |
-| OPENAI_MODEL_NAME | Required model identifier configured in the deployment environment |
 
 Deployment
 Platform: Netlify (https://northstarprojo.netlify.app). The repository
