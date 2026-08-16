@@ -106,7 +106,7 @@ single-line JSON string |
 | FIREBASE_INVENTORY_PATH | Root node in Firebase where inventory
 records live (default: inventory) |
 | OPENAI_API_KEY | OpenAI API key |
-| OPENAI_MODEL_NAME | Model to use (default: gpt-4o) |
+| OPENAI_MODEL_NAME | Required model identifier configured in the deployment environment |
 
 Deployment
 Platform: Netlify (https://northstarprojo.netlify.app). The repository

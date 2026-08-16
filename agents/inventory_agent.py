@@ -48,4 +48,4 @@ def get_chatbot_reply(user_message):
     reply = result.raw if hasattr(result, 'raw') else str(result)
     return {'reply': reply.strip(), 'source':
 'firebase_realtime_database', 'model':
-os.environ.get('OPENAI_MODEL_NAME', 'gpt-4o')}
+os.environ['OPENAI_MODEL_NAME']}
