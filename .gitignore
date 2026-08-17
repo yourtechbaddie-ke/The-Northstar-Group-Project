@@ -4,15 +4,29 @@ Environment variables
 .env.development.local
 .env.test.local
 .env.production.local
+.env.example
+
  Dependencies
 node_modules/
  OS files
+
 .DS_Store
 Thumbs.db
+
  Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
-7. NEW data/store.js
+
+data/store.js
+
+```json 
 tsconfig.json
+angular.json
+tsconfigapp.json
+package.json
+postcssrc.json
+extensions.json
+launch.json
+tasks.json
