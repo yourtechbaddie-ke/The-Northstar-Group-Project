@@ -2,7 +2,7 @@ The Northstar Group Project
 
 This is the backend API for the Northstar Retail Co. inventory
 chatbot. It is built with FastAPI and deployed as a serverless
-function on Vercel. It connects to a Firebase Realtime Database for
+function on Netlify. It connects to a Firebase Realtime Database for
 live inventory data and uses CrewAI to power the AI agent.
 
 Project Structure
