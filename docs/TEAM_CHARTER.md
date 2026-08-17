@@ -27,7 +27,7 @@ ________________________________________
    
 |      Member     	|      Primary Role                        	|      Key Responsibility                                                       	|
 |-----------------	|------------------------------------------	|-------------------------------------------------------------------------------	|
-|     Angela Wainaina    	|     Support logic & workflow design            	|     designed the order status/refunds workflows and built the backend logic and data that power them                 	|
+|     Angela Wainaina Wambui   	|     Support logic & workflow design            	|     designed the order status/refunds workflows and built the backend logic and data that power them                 	|
 |     Samuel Visinde    	|     Product & Conversation Designer      	|     Chatbot questions, responses, user journeys and   conversation logic      	|
 |     Regina Kerubo    	|     Technical Developer                  	|     Chatbot implementation, logic and integrations                            	|
 |     Abdurohman Worku    	|     QA & Testing Lead                    	|     Test cases, bug identification, validation and evidence                   	|
