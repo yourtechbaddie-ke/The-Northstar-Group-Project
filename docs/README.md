@@ -83,4 +83,4 @@ Tech Stack
 - CrewAI — AI agent orchestration
 - Firebase Admin SDK — Realtime Database access
 - Netlify — Serverless deployment
-- OpenAI GPT-4o — Language model
+- OpenAI GPT-4.o — Language model
