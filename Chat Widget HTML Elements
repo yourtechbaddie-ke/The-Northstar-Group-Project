@@ -1,0 +1,26 @@
+Chat Widget HTML Elements
+
+Add these three HTML elements to any page where you want the chatbot
+to appear (index.html, dashboard.html, contact.html).
+
+Step 1 — Add the HTML elements (inside <main> or wherever you want the chat):
+
+<input id="chat-input" type="text" placeholder="Ask us anything..." />
+<button id="chat-send">Send</button>
+<div id="chat-reply"></div>
+
+Step 2 — Add the script tag (at the bottom of <body>, before </body>):
+
+<script src="/chat-widget.js"></script>
+
+How it works:
+- The customer types a message into #chat-input and clicks Send (or
+presses Enter)
+- The widget POSTs the message to /api/chat
+- The reply from the chatbot appears in chat-reply
+- While waiting, it shows 'Thinking...'
+- On error it shows a friendly fallback message
+
+The chat-widget.js file is already in your GitHub repo.
+The /api/chat backend is powered by api/index.py (FastAPI + CrewAI
++ Firebase).
