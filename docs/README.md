@@ -1,6 +1,6 @@
 The Northstar Group Project
 
-This is the backend API for the Northstar Clothing Co. inventory
+This is the backend API for the Northstar Retail Co. inventory
 chatbot. It is built with FastAPI and deployed as a serverless
 function on Vercel. It connects to a Firebase Realtime Database for
 live inventory data and uses CrewAI to power the AI agent.
@@ -17,7 +17,7 @@ Project Structure
 ├── DECISION_TREES.md       Chatbot classification and routing guide
 ├── AGENTS.md               Agent roles and responsibilities
 ├── requirements.txt        Python dependencies
-├── vercel.json             Vercel deployment configuration
+├── netlify.json             Netlify deployment configuration
 └── .env.example            Environment variable template
 ```
 
@@ -35,13 +35,9 @@ pip install -r requirements.txt
 ```
 
 3. Configure environment variables
-Copy `.env.example` to `.env.local` and fill in your values:
-```
-FIREBASE_CREDENTIALS_JSON=<your Firebase service account JSON as one line>
-FIREBASE_DATABASE_URL=https://the-northstar-group-project-default-rtdb.asia-southeast1.firebasedatabase.app
+
 FIREBASE_INVENTORY_PATH=inventory
 OPENAI_API_KEY=<your OpenAI API key>
-OPENAI_MODEL_NAME=gpt-4o
 ```
 
 4. Run locally
@@ -49,11 +45,11 @@ OPENAI_MODEL_NAME=gpt-4o
 uvicorn api.index:app --reload --port 8000
 ```
 
-5. Deploy to Vercel
+5. Deploy to Netlify
 - Push all files to GitHub
-- Connect the repo to Vercel
-- Add all environment variables in Vercel project settings
-- Vercel auto-deploys on push to main
+- Connect the repo to Netlify
+- Add all environment variables in Netlify project settings
+- Netlify auto-deploys on push to main
 
 API Endpoints
 
@@ -70,24 +66,21 @@ Request body:
 
 Response:
 ```json
-{"reply": "...", "source": "firebase_realtime_database", "model":
-"gpt-4o", "status": "ok"}
+{"reply": "...", "source", "status": "ok"}
 ```
 
 Environment Variables
 | Variable | Description |
 |---|---|
-| FIREBASE_CREDENTIALS_JSON | Firebase service account key as a
-single-line JSON string |
-| FIREBASE_DATABASE_URL | Your Firebase Realtime Database URL |
+
 | FIREBASE_INVENTORY_PATH | Root node in Firebase where inventory
 records live (default: inventory) |
 | OPENAI_API_KEY | Your OpenAI API key |
-| OPENAI_MODEL_NAME | Model to use (default: gpt-4o) |
+
 
 Tech Stack
 - FastAPI — Python web framework
 - CrewAI — AI agent orchestration
 - Firebase Admin SDK — Realtime Database access
-- Vercel — Serverless deployment
+- Netlify — Serverless deployment
 - OpenAI GPT-4o — Language model
