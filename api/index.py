@@ -8,7 +8,11 @@ app = FastAPI(title='Northstar Inventory Chatbot API', version='1.0.0')
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:3000', 'http://localhost:5173,
+    allow_origins=[
+        'http://localhost:3000',
+        'http://localhost:5173',
+        'https://northstarprojo.netlify.app',
+    ],
     allow_methods=['POST', 'GET'],
     allow_headers=['*'],
 )
