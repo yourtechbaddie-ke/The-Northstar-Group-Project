@@ -1,86 +1,49 @@
-The Northstar Group Project
+# Northstar Retail Co. AI Support Backend
 
-This is the backend API for the Northstar Retail Co. inventory
-chatbot. It is built with FastAPI and deployed as a serverless
-function on Netlify. It connects to a Firebase Realtime Database for
-live inventory data and uses CrewAI to power the AI agent.
+This backend powers the Northstar Retail Co. customer-support chatbot. It uses FastAPI, OpenAI for natural-language responses, and Render Postgres for the live inventory source of truth.
 
-Project Structure
-```
+## Project Structure
+
+```text
 /
-├── api/
-│   └── index.py           FastAPI app — Vercel serverless entry point
-├── agents/
-│   └── inventory_agent.py  CrewAI agent definition
-├── tools/
-│   └── firebase_tool.py    Custom Firebase inventory tool
-├── DECISION_TREES.md       Chatbot classification and routing guide
-├── AGENTS.md               Agent roles and responsibilities
-├── requirements.txt        Python dependencies
-├── netlify.json             Netlify deployment configuration
-└── .env.example            Environment variable template
+├── api/index.py             FastAPI application
+├── agents/inventory_agent.py  OpenAI-powered customer concierge
+├── db/inventory.py          Render Postgres inventory access and seeding
+├── data/inventory.json      Canonical inventory seed
+├── data/inventory.js        Frontend inventory catalogue
+├── DECISION_TREES.md        Chatbot classification and routing guide
+├── AGENTS.md                AI behavior and safety guidance
+└── requirements.txt         Python dependencies
 ```
 
-Setup
+## Environment
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourtechbaddie-ke/The-Northstar-Group-Project.git
-cd The-Northstar-Group-Project
-```
+Set these variables on the Render web service:
 
-2. Install dependencies
+- `OPENAI_API_KEY` — OpenAI API credential
+- `OPENAI_MODEL_NAME` — model used for responses, default `gpt-5.6-luna`
+- `DATABASE_URL` — Render Postgres connection string, supplied when the database is connected to the service
+
+## Local run
+
 ```bash
 pip install -r requirements.txt
-```
-
-3. Configure environment variables
-
-FIREBASE_INVENTORY_PATH=inventory
-OPENAI_API_KEY=<your OpenAI API key>
-```
-
-4. Run locally
-```bash
 uvicorn api.index:app --reload --port 8000
 ```
 
-5. Deploy to Netlify
-- Push all files to GitHub
-- Connect the repo to Netlify
-- Add all environment variables in Netlify project settings
-- Netlify auto-deploys on push to main
+## API
 
-API Endpoints
+`GET /api/health` returns service health.
 
-GET /api/health
-Returns service health status.
+`POST /api/chat` accepts `{ "message": "..." }` and returns a customer-facing inventory response.
 
-POST /api/chat
-Accepts a customer message and returns an AI-generated inventory reply.
+## Behavior
 
-Request body:
-```json
-{"message": "Do you have the Arctic Fleece Jacket in my size?"}
-```
+The AI is conversational, warm, friendly and occasionally playful. Product facts are grounded in the inventory database; it must not invent stock, prices, products or specifications.
 
-Response:
-```json
-{"reply": "...", "source", "status": "ok"}
-```
+## Stack
 
-Environment Variables
-| Variable | Description |
-|---|---|
-
-| FIREBASE_INVENTORY_PATH | Root node in Firebase where inventory
-records live (default: inventory) |
-| OPENAI_API_KEY | Your OpenAI API key |
-
-
-Tech Stack
-- FastAPI — Python web framework
-- CrewAI — AI agent orchestration
-- Firebase Admin SDK — Realtime Database access
-- Netlify — Serverless deployment
-- OpenAI GPT-4o — Language model
+- FastAPI
+- OpenAI API
+- Render Postgres
+- Render Web Service
